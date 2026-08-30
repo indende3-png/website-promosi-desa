@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Desa Serindang | Galeri</title>
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;scroll-behavior:smooth}
+body{font-family:Arial;background:#f7faf8;color:#40534d;line-height:1.7}
+nav{position:sticky;top:0;z-index:9;background:#fff;padding:17px 7%;display:flex;justify-content:space-between;align-items:center;box-shadow:0 3px 20px #0001}
+.logo{font-size:25px;font-weight:bold;color:#092b24;text-decoration:none}.logo span{color:#08a06d}
+.menu{display:flex;gap:20px;flex-wrap:wrap}.menu a{text-decoration:none;color:#40534d;font-weight:bold}.menu a:hover{color:#087f5b}
+.head{background:linear-gradient(135deg,#dff6ed,#fff6da);padding:85px 7%}.head p{color:#087f5b;font-weight:bold;letter-spacing:3px}.head h1{font:60px Georgia;color:#092b24}
+section{padding:85px 7%}
+.gallery{max-width:1100px;margin:auto;display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+figure{background:#fff;border-radius:22px;overflow:hidden;box-shadow:0 12px 35px #0001;transition:.4s}
+figure:hover{transform:translateY(-8px)}
+figure img{width:100%;height:330px;object-fit:cover;display:block}
+figcaption{padding:15px;font-weight:bold;color:#092b24}
+.contact{text-align:center;background:#eef8f4}
+footer{text-align:center;background:#061f19;color:#bdd0c9;padding:35px}footer h3{color:white}
+.reveal{opacity:0;transform:translateY(35px);transition:.8s}.show{opacity:1;transform:none}
+@media(max-width:800px){nav{flex-direction:column;gap:12px}.menu{justify-content:center;gap:12px}.head h1{font-size:45px}.gallery{grid-template-columns:1fr}}
+</style>
+</head>
+
+<body>
+
+<nav>
+<a href="index.html" class="logo">SERINDANG<span>.</span></a>
+<div class="menu">
+<a href="index.html">Beranda</a>
+<a href="profil.html">Profil</a>
+<a href="sejarah.html">Sejarah</a>
+<a href="potensi.html">Potensi</a>
+<a href="galeri.html">Galeri</a>
+</div>
+</nav>
+
+<div class="head reveal">
+<p>DOKUMENTASI DESA</p>
+<h1>Galeri Serindang</h1>
+<p>Suasana Desa Serindang.</p>
+</div>
+
+<section>
+
+<div class="gallery">
+
+<figure class="reveal">
+<img src="profile1.jpg">
+<figcaption>🌄 Pemandangan Desa Serindang</figcaption>
+</figure>
+
+<figure class="reveal">
+<img src="profile3.jpg">
+<figcaption>🏡 Kantor Desa Serindang</figcaption>
+</figure>
+
+<figure class="reveal">
+<img src="profile4.jpg">
+<figcaption>🏫 SDN 10 Serindang</figcaption>
+</figure>
+
+</div>
+
+</section>
+
+<section class="contact reveal">
+<h2>Hubungi Desa</h2>
+<p>📍 Desa Serindang, Kecamatan Semparuk, Kabupaten Sambas</p>
+<p>📧 emaildesa@example.com</p>
+<p>📱 08xxxxxxxxxx</p>
+</section>
+
+<footer>
+<h3>DESA SERINDANG</h3>
+<p>Kalimantan Barat • Indonesia</p>
+<small>© 2026 Desa Serindang</small>
+</footer>
+
+<script>
+const o=new IntersectionObserver(e=>e.forEach(x=>x.isIntersecting&&x.target.classList.add("show")),{threshold:.15});
+document.querySelectorAll(".reveal").forEach(x=>o.observe(x));
+</script>
+
+</body>
+</html>

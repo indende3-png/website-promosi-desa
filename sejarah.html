@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Desa Serindang | Sejarah</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:"DM Sans",Arial,sans-serif;
+    color:#40534d;
+    background:#f8fbfa;
+    line-height:1.7;
+}
+
+/* NAVBAR */
+nav{
+    position:sticky;
+    top:0;
+    z-index:100;
+    background:rgba(255,255,255,.95);
+    backdrop-filter:blur(12px);
+    padding:18px 7%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    border-bottom:1px solid #e5eee9;
+}
+
+.logo{
+    font-size:25px;
+    font-weight:800;
+    color:#092b24;
+    text-decoration:none;
+}
+
+.logo span{
+    color:#087f5b;
+}
+
+.menu{
+    display:flex;
+    gap:22px;
+    flex-wrap:wrap;
+}
+
+.menu a{
+    text-decoration:none;
+    color:#40534d;
+    font-weight:700;
+    transition:.3s;
+}
+
+.menu a:hover{
+    color:#087f5b;
+}
+
+.menu a.active{
+    color:#087f5b;
+}
+
+/* PAGE TITLE */
+.page-title{
+    background:linear-gradient(135deg,#dff6ed,#fff6da);
+    padding:100px 7%;
+}
+
+.page-title p:first-child{
+    color:#087f5b;
+    font-weight:800;
+    letter-spacing:3px;
+}
+
+.page-title h1{
+    font-family:"Playfair Display",serif;
+    font-size:clamp(48px,8vw,70px);
+    color:#092b24;
+    margin:10px 0;
+}
+
+.page-title p:last-child{
+    color:#087f5b;
+    font-weight:600;
+}
+
+/* SECTION */
+section{
+    padding:85px 7%;
+}
+
+.title{
+    text-align:center;
+    margin-bottom:45px;
+}
+
+.title p{
+    color:#087f5b;
+    font-weight:800;
+    letter-spacing:3px;
+}
+
+.title h2{
+    font-family:"Playfair Display",serif;
+    font-size:42px;
+    color:#092b24;
+}
+
+/* FOTO - TAMPIL UTUH */
+.sejarah-img{
+    width:100%;
+    max-width:1100px;
+
+    /* tinggi mengikuti ukuran asli foto */
+    height:auto;
+
+    /* jangan crop foto */
+    object-fit:contain;
+
+    display:block;
+    margin:0 auto 55px;
+
+    border-radius:28px;
+
+    background:#eef8f4;
+
+    box-shadow:0 20px 50px rgba(0,0,0,.15);
+}
+
+/* TIMELINE */
+.timeline{
+    max-width:850px;
+    margin:auto;
+    border-left:3px solid #087f5b;
+    padding-left:35px;
+}
+
+.timeline-item{
+    display:flex;
+    gap:25px;
+    background:white;
+    padding:28px;
+    margin-bottom:25px;
+    border-radius:20px;
+    box-shadow:0 12px 35px rgba(0,0,0,.08);
+    transition:.35s;
+}
+
+.timeline-item:hover{
+    transform:translateY(-6px);
+}
+
+.timeline-item span{
+    min-width:45px;
+    height:45px;
+    display:grid;
+    place-items:center;
+    border-radius:50%;
+    background:#f4b942;
+    color:#092b24;
+    font-weight:800;
+}
+
+.timeline-item h2{
+    font-family:"Playfair Display",serif;
+    color:#092b24;
+    margin-bottom:8px;
+}
+
+/* SECTION BAWAH */
+.info{
+    background:#eef8f4;
+}
+
+.info-box{
+    max-width:1000px;
+    margin:auto;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:30px;
+}
+
+.info-card{
+    background:white;
+    padding:30px;
+    border-radius:22px;
+    box-shadow:0 12px 35px rgba(0,0,0,.07);
+}
+
+.info-card h3{
+    color:#092b24;
+    margin-bottom:10px;
+}
+
+/* FOOTER */
+footer{
+    text-align:center;
+    padding:40px;
+    background:#061f19;
+    color:#bdd0c9;
+}
+
+footer h3{
+    color:white;
+    margin-bottom:5px;
+}
+
+/* ANIMASI */
+.reveal{
+    opacity:0;
+    transform:translateY(35px);
+    transition:opacity .8s ease,transform .8s ease;
+}
+
+.reveal.show{
+    opacity:1;
+    transform:translateY(0);
+}
+
+/* MOBILE */
+@media(max-width:800px){
+
+    nav{
+        flex-direction:column;
+        gap:15px;
+    }
+
+    .menu{
+        gap:12px;
+        justify-content:center;
+    }
+
+    .page-title{
+        padding:70px 6%;
+    }
+
+    section{
+        padding:65px 6%;
+    }
+
+    .page-title h1{
+        font-size:45px;
+    }
+
+    .title h2{
+        font-size:35px;
+    }
+
+    /* FOTO TETAP UTUH DI HP */
+    .sejarah-img{
+        width:100%;
+        height:auto;
+        object-fit:contain;
+        border-radius:20px;
+    }
+
+    .timeline{
+        padding-left:18px;
+    }
+
+    .timeline-item{
+        gap:15px;
+        padding:20px;
+    }
+
+    .info-box{
+        grid-template-columns:1fr;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav>
+
+    <a href="index.html" class="logo">
+        SERINDANG<span>.</span>
+    </a>
+
+    <div class="menu">
+        <a href="index.html">Beranda</a>
+        <a href="profil.html">Profil</a>
+        <a href="sejarah.html" class="active">Sejarah</a>
+        <a href="potensi.html">Potensi</a>
+        <a href="galeri.html">Galeri</a>
+    </div>
+
+</nav>
+
+
+<!-- JUDUL -->
+<div class="page-title reveal">
+
+    <p>PERJALANAN DESA</p>
+
+    <h1>Sejarah Serindang</h1>
+
+    <p>
+        Kisah dan perkembangan Desa Serindang dari masa ke masa.
+    </p>
+
+</div>
+
+
+<!-- KONTEN SEJARAH -->
+<section>
+
+    <div class="title reveal">
+
+        <p>HISTORY</p>
+
+        <h2>Perjalanan Desa Serindang</h2>
+
+    </div>
+
+
+    <!-- FOTO DESA -->
+    <img
+        src="profile2.jpg"
+        alt="Foto Desa Serindang"
+        class="sejarah-img reveal"
+    >
+
+
+    <!-- TIMELINE -->
+    <div class="timeline">
+
+        <div class="timeline-item reveal">
+
+            <span>01</span>
+
+            <div>
+
+                <h2>Awal Permukiman</h2>
+
+                <p>
+                    Desa Serindang berkembang dari kehidupan
+                    masyarakat yang membangun permukiman
+                    dan kehidupan bersama di wilayah desa.
+                    Semangat kebersamaan dan gotong royong
+                    menjadi bagian penting dalam kehidupan
+                    masyarakat.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="timeline-item reveal">
+
+            <span>02</span>
+
+            <div>
+
+                <h2>Perkembangan Desa</h2>
+
+                <p>
+                    Seiring berjalannya waktu, Desa Serindang
+                    terus mengalami perkembangan dalam
+                    berbagai bidang seperti pendidikan,
+                    ekonomi, pembangunan, pemerintahan,
+                    dan kehidupan sosial masyarakat.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="timeline-item reveal">
+
+            <span>03</span>
+
+            <div>
+
+                <h2>Serindang Masa Kini</h2>
+
+                <p>
+                    Saat ini Desa Serindang terus berkembang
+                    dengan memanfaatkan potensi masyarakat,
+                    lingkungan, serta kemajuan teknologi.
+                    Masyarakat bersama-sama menjaga
+                    kebersamaan dan membangun desa.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="timeline-item reveal">
+
+            <span>04</span>
+
+            <div>
+
+                <h2>Masa Depan Desa</h2>
+
+                <p>
+                    Desa Serindang diharapkan dapat terus
+                    meningkatkan pembangunan, pendidikan,
+                    ekonomi masyarakat, dan pengembangan
+                    potensi lokal untuk menciptakan desa
+                    yang semakin maju.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- INFORMASI TAMBAHAN -->
+<section class="info">
+
+    <div class="title reveal">
+
+        <p>SERINDANG</p>
+
+        <h2>Nilai Kehidupan Desa</h2>
+
+    </div>
+
+
+    <div class="info-box">
+
+        <div class="info-card reveal">
+
+            <h3>🤝 Gotong Royong</h3>
+
+            <p>
+                Kebersamaan dan gotong royong menjadi
+                bagian penting dalam kehidupan masyarakat
+                Desa Serindang.
+            </p>
+
+        </div>
+
+
+        <div class="info-card reveal">
+
+            <h3>🌿 Lingkungan</h3>
+
+            <p>
+                Lingkungan desa menjadi bagian dari
+                kehidupan masyarakat dan perlu dijaga
+                bersama.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- FOOTER -->
+<footer>
+
+    <h3>DESA SERINDANG</h3>
+
+    <p>
+        Kecamatan Semparuk, Kabupaten Sambas, Kalimantan Barat
+    </p>
+
+    <small>
+        © 2026 Desa Serindang
+    </small>
+
+</footer>
+
+
+<!-- ANIMASI SCROLL -->
+<script>
+
+const observer = new IntersectionObserver(
+
+    (entries) => {
+
+        entries.forEach((entry) => {
+
+            if(entry.isIntersecting){
+
+                entry.target.classList.add("show");
+
+            }
+
+        });
+
+    },
+
+    {
+        threshold:0.15
+    }
+
+);
+
+document
+    .querySelectorAll(".reveal")
+    .forEach((element) => {
+
+        observer.observe(element);
+
+    });
+
+</script>
+
+</body>
+</html>

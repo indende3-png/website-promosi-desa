@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Desa Serindang | Potensi Desa</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:"DM Sans",Arial,sans-serif;
+    color:#40534d;
+    background:#f8fbfa;
+    line-height:1.7;
+}
+
+/* NAVBAR */
+nav{
+    position:sticky;
+    top:0;
+    z-index:100;
+    background:rgba(255,255,255,.95);
+    backdrop-filter:blur(12px);
+    padding:18px 7%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    border-bottom:1px solid #e5eee9;
+}
+
+.logo{
+    font-size:25px;
+    font-weight:800;
+    color:#092b24;
+    text-decoration:none;
+}
+
+.logo span{
+    color:#087f5b;
+}
+
+.menu{
+    display:flex;
+    gap:22px;
+    flex-wrap:wrap;
+    justify-content:center;
+}
+
+.menu a{
+    text-decoration:none;
+    color:#40534d;
+    font-weight:700;
+    transition:.3s;
+}
+
+.menu a:hover{
+    color:#087f5b;
+}
+
+.menu a.active{
+    color:#087f5b;
+}
+
+/* PAGE TITLE */
+.page-title{
+    background:linear-gradient(135deg,#dff6ed,#fff6da);
+    padding:100px 7%;
+}
+
+.page-title p:first-child{
+    color:#087f5b;
+    font-weight:800;
+    letter-spacing:3px;
+}
+
+.page-title h1{
+    font-family:"Playfair Display",serif;
+    font-size:clamp(48px,8vw,70px);
+    color:#092b24;
+    margin:10px 0;
+}
+
+.page-title p:last-child{
+    color:#087f5b;
+    font-weight:600;
+}
+
+/* SECTION */
+section{
+    padding:85px 7%;
+}
+
+/* CARDS */
+.cards{
+    max-width:1100px;
+    margin:auto;
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:25px;
+}
+
+.card{
+    background:white;
+    padding:32px;
+    border-radius:24px;
+    border:1px solid #e4eeea;
+    box-shadow:0 15px 40px rgba(9,43,36,.08);
+    transition:.4s;
+}
+
+.card:hover{
+    transform:translateY(-10px);
+    box-shadow:0 20px 45px rgba(9,43,36,.14);
+}
+
+.icon{
+    font-size:45px;
+    margin-bottom:8px;
+}
+
+.card h2{
+    font-family:"Playfair Display",serif;
+    color:#092b24;
+    margin-bottom:10px;
+}
+
+.card h3{
+    color:#092b24;
+    margin-bottom:8px;
+}
+
+/* FOTO POTENSI */
+.photo-potensi{
+    width:100%;
+    max-width:1000px;
+    height:auto;
+    display:block;
+    object-fit:contain;
+    margin:0 auto;
+    border-radius:28px;
+    background:#eef8f4;
+    box-shadow:0 20px 50px rgba(0,0,0,.15);
+}
+
+/* BAGIAN FOTO */
+.photo-section{
+    background:#eef8f4;
+}
+
+.photo-title{
+    text-align:center;
+    margin-bottom:35px;
+}
+
+.photo-title p{
+    color:#087f5b;
+    font-weight:800;
+    letter-spacing:3px;
+}
+
+.photo-title h2{
+    font-family:"Playfair Display",serif;
+    color:#092b24;
+    font-size:42px;
+}
+
+/* INFO */
+.info{
+    max-width:900px;
+    margin:auto;
+    text-align:center;
+}
+
+.info h2{
+    font-family:"Playfair Display",serif;
+    color:#092b24;
+    font-size:40px;
+    margin-bottom:15px;
+}
+
+/* FOOTER */
+footer{
+    text-align:center;
+    padding:40px;
+    background:#061f19;
+    color:#bdd0c9;
+}
+
+footer h3{
+    color:white;
+    margin-bottom:5px;
+}
+
+/* ANIMASI */
+.reveal{
+    opacity:0;
+    transform:translateY(35px);
+    transition:opacity .8s ease,transform .8s ease;
+}
+
+.reveal.show{
+    opacity:1;
+    transform:translateY(0);
+}
+
+/* MOBILE */
+@media(max-width:800px){
+
+    nav{
+        flex-direction:column;
+        gap:15px;
+    }
+
+    .menu{
+        gap:12px;
+    }
+
+    .page-title{
+        padding:70px 6%;
+    }
+
+    section{
+        padding:65px 6%;
+    }
+
+    .page-title h1{
+        font-size:45px;
+    }
+
+    .cards{
+        grid-template-columns:1fr;
+    }
+
+    .photo-title h2{
+        font-size:35px;
+    }
+
+    .photo-potensi{
+        width:100%;
+        height:auto;
+        object-fit:contain;
+        border-radius:20px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav>
+
+    <a href="index.html" class="logo">
+        SERINDANG<span>.</span>
+    </a>
+
+    <div class="menu">
+        <a href="index.html">Beranda</a>
+        <a href="profil.html">Profil</a>
+        <a href="sejarah.html">Sejarah</a>
+        <a href="potensi.html" class="active">Potensi</a>
+        <a href="galeri.html">Galeri</a>
+    </div>
+
+</nav>
+
+
+<!-- HEADER -->
+<div class="page-title reveal">
+
+    <p>KEUNGGULAN LOKAL</p>
+
+    <h1>Potensi Desa</h1>
+
+    <p>
+        Kekuatan dan potensi lokal Desa Serindang.
+    </p>
+
+</div>
+
+
+<!-- POTENSI -->
+<section>
+
+    <div class="cards">
+
+        <div class="card reveal">
+
+            <div class="icon">🌾</div>
+
+            <h2>Pertanian</h2>
+
+            <p>
+                Potensi pertanian dapat menjadi
+                salah satu sumber ekonomi masyarakat
+                Desa Serindang.
+            </p>
+
+        </div>
+
+
+        <div class="card reveal">
+
+            <div class="icon">🧺</div>
+
+            <h2>UMKM</h2>
+
+            <p>
+                Produk makanan, kerajinan, dan usaha
+                lokal dapat dikembangkan menjadi
+                produk unggulan desa.
+            </p>
+
+        </div>
+
+
+        <div class="card reveal">
+
+            <div class="icon">🎭</div>
+
+            <h2>Budaya</h2>
+
+            <p>
+                Tradisi, kesenian, dan budaya lokal
+                merupakan bagian dari identitas
+                masyarakat Desa Serindang.
+            </p>
+
+        </div>
+
+
+        <div class="card reveal">
+
+            <div class="icon">🌳</div>
+
+            <h2>Wisata Alam</h2>
+
+            <p>
+                Kekayaan alam dan lingkungan desa
+                dapat dikembangkan menjadi potensi
+                wisata berbasis masyarakat.
+            </p>
+
+        </div>
+
+
+        <div class="card reveal">
+
+            <div class="icon">🐟</div>
+
+            <h2>Perikanan</h2>
+
+            <p>
+                Potensi perikanan dapat membantu
+                mendukung perekonomian dan
+                ketahanan pangan masyarakat.
+            </p>
+
+        </div>
+
+
+        <div class="card reveal">
+
+            <div class="icon">💻</div>
+
+            <h2>Digitalisasi</h2>
+
+            <p>
+                Teknologi dapat digunakan untuk
+                promosi, informasi, dan pengembangan
+                ekonomi Desa Serindang.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- FOTO SEKOLAH -->
+<section class="photo-section">
+
+    <div class="photo-title reveal">
+
+        <p>PENDIDIKAN</p>
+
+        <h2>Bagian dari Potensi Desa</h2>
+
+    </div>
+
+
+    <!-- FOTO TAMPIL UTUH -->
+    <img
+        src="profile3.jpg"
+        alt="SDN 10 Serindang"
+        class="photo-potensi reveal"
+    >
+
+</section>
+
+
+<!-- INFO -->
+<section>
+
+    <div class="info reveal">
+
+        <h2>Generasi Desa yang Maju</h2>
+
+        <p>
+            Pendidikan merupakan salah satu bagian
+            penting dalam perkembangan masyarakat.
+            Dengan pendidikan yang baik, generasi muda
+            dapat ikut berperan dalam membangun dan
+            mengembangkan Desa Serindang.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- FOOTER -->
+<footer>
+
+    <h3>DESA SERINDANG</h3>
+
+    <p>
+        Kecamatan Semparuk, Kabupaten Sambas, Kalimantan Barat
+    </p>
+
+    <small>
+        © 2026 Desa Serindang
+    </small>
+
+</footer>
+
+
+<!-- ANIMASI SCROLL -->
+<script>
+
+const observer = new IntersectionObserver(
+
+    (entries) => {
+
+        entries.forEach((entry) => {
+
+            if(entry.isIntersecting){
+
+                entry.target.classList.add("show");
+
+            }
+
+        });
+
+    },
+
+    {
+        threshold:0.15
+    }
+
+);
+
+document
+    .querySelectorAll(".reveal")
+    .forEach((element) => {
+
+        observer.observe(element);
+
+    });
+
+</script>
+
+</body>
+</html>

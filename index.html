@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Desa Serindang | Beranda</title>
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;scroll-behavior:smooth}
+body{font-family:Arial,sans-serif;background:#f6faf8;color:#334c44;line-height:1.7}
+nav{position:sticky;top:0;z-index:99;background:#fff;padding:17px 7%;display:flex;justify-content:space-between;align-items:center;box-shadow:0 3px 20px #0001}
+.logo{font-size:25px;font-weight:bold;color:#092b24;text-decoration:none}
+.logo span{color:#08a06d}
+.menu{display:flex;gap:20px;flex-wrap:wrap}
+.menu a{text-decoration:none;color:#40534d;font-weight:bold}
+.menu a:hover{color:#08a06d}
+.hero{min-height:88vh;display:flex;align-items:center;color:white;background:linear-gradient(110deg,#052f25d9,#087f5b88),url("profile1.jpg") center/cover}
+.hero div{width:1100px;max-width:90%;margin:auto}
+.hero small{color:#ffe09a;font-weight:bold;letter-spacing:3px}
+.hero h1{font-family:Georgia,serif;font-size:clamp(48px,8vw,85px);line-height:1.05;margin:20px 0}
+.hero p{max-width:650px;font-size:18px}
+.btn{display:inline-block;margin-top:25px;padding:13px 25px;border-radius:40px;background:#f4b942;color:#17251f;text-decoration:none;font-weight:bold}
+section{padding:80px 7%}
+.title{text-align:center;margin-bottom:40px}
+.title p{color:#087f5b;font-weight:bold;letter-spacing:3px}
+.title h2{font-family:Georgia,serif;font-size:42px;color:#092b24}
+.cards{max-width:1100px;margin:auto;display:grid;grid-template-columns:repeat(3,1fr);gap:25px}
+.card{background:white;padding:30px;border-radius:22px;box-shadow:0 12px 35px #092b2412;transition:.4s}
+.card:hover{transform:translateY(-10px)}
+.icon{font-size:45px}
+.card h3{color:#092b24;margin:8px 0}
+.numbers{background:#092b24;color:white;padding:60px 7%;display:grid;grid-template-columns:repeat(4,1fr);text-align:center}
+.numbers h2{color:#f4b942;font-size:40px}
+.light{background:#eef8f4}
+.two{max-width:1100px;margin:auto;display:grid;grid-template-columns:1fr 1fr;gap:45px;align-items:center}
+.photo{height:430px;border-radius:25px;background:url("images/profile1.jpg") center/cover;box-shadow:0 15px 40px #0002}
+.two h2{font-family:Georgia,serif;font-size:40px;color:#092b24}
+footer{text-align:center;background:#061f19;color:#bdd0c9;padding:35px}
+footer h3{color:white}
+.reveal{opacity:0;transform:translateY(35px);transition:.8s}
+.show{opacity:1;transform:none}
+@media(max-width:800px){
+nav{flex-direction:column;gap:12px}.menu{justify-content:center;gap:12px}
+.hero{min-height:75vh}.hero h1{font-size:48px}
+.cards,.two{grid-template-columns:1fr}.numbers{grid-template-columns:repeat(2,1fr)}
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+<a href="index.html" class="logo">SERINDANG<span>.</span></a>
+<div class="menu">
+<a href="index.html">Beranda</a>
+<a href="profil.html">Profil</a>
+<a href="sejarah.html">Sejarah</a>
+<a href="potensi.html">Potensi</a>
+<a href="galeri.html">Galeri</a>
+</div>
+</nav>
+
+<div class="hero">
+<div class="reveal">
+</div>
+</div>
+
+<section>
+<div class="title reveal">
+<p>DESA SERINDANG</p>
+<h2>Kenali Desa Kami</h2>
+</div>
+
+<div class="cards">
+<div class="card reveal">
+<div class="icon">🏡</div>
+<h3>Profil Desa</h3>
+<p>Mengenal identitas dan kehidupan masyarakat Desa Serindang.</p>
+<a class="btn" href="profil.html">Lihat Profil</a>
+</div>
+
+<div class="card reveal">
+<div class="icon">📖</div>
+<h3>Sejarah</h3>
+<p>Mengenal perjalanan Desa Serindang dari masa ke masa.</p>
+<a class="btn" href="sejarah.html">Lihat Sejarah</a>
+</div>
+
+<div class="card reveal">
+<div class="icon">🌾</div>
+<h3>Potensi</h3>
+<p>Melihat berbagai potensi lokal Desa Serindang.</p>
+<a class="btn" href="potensi.html">Lihat Potensi</a>
+</div>
+</div>
+</section>
+
+<div class="numbers">
+<div><h2>01</h2><p>Profil</p></div>
+<div><h2>02</h2><p>Sejarah</p></div>
+<div><h2>03</h2><p>Potensi</p></div>
+<div><h2>04</h2><p>Galeri</p></div>
+</div>
+
+<section class="light">
+<div class="two">
+<div class="photo reveal"></div>
+<div class="reveal">
+<p style="color:#087f5b;font-weight:bold">SERINDANG • SEMPARUK</p>
+<h2>Desa dengan Semangat Kebersamaan</h2>
+<p>Desa Serindang berada di Kecamatan Semparuk, Kabupaten Sambas, Kalimantan Barat.</p>
+<p>Website ini dibuat sebagai media untuk memperkenalkan Desa Serindang kepada masyarakat luas.</p>
+<a href="galeri.html" class="btn">Lihat Galeri →</a>
+</div>
+</div>
+</section>
+
+<footer>
+<h3>DESA SERINDANG</h3>
+<p>Kecamatan Semparuk, Kabupaten Sambas, Kalimantan Barat</p>
+<small>© 2026 Desa Serindang</small>
+</footer>
+
+<script>
+const obs=new IntersectionObserver(e=>e.forEach(x=>x.isIntersecting&&x.target.classList.add("show")),{threshold:.15});
+document.querySelectorAll(".reveal").forEach(x=>obs.observe(x));
+</script>
+
+</body>
+</html>

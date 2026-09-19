@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Layanan Masyarakat | Desa Serindang</title>
+    <title>Buku Tamu | Desa Serindang</title>
 
     <style>
         * {
@@ -22,13 +22,13 @@
 
         /* NAVBAR */
         nav {
+            background: rgba(255, 255, 255, 0.97);
             height: 70px;
-            background: rgba(255,255,255,0.95);
+            padding: 0 7%;
             display: flex;
             align-items: center;
             justify-content: space-between;
-            padding: 0 7%;
-            box-shadow: 0 3px 15px rgba(0,0,0,0.08);
+            box-shadow: 0 3px 15px rgba(0, 0, 0, 0.08);
             position: sticky;
             top: 0;
             z-index: 100;
@@ -37,38 +37,30 @@
         .logo {
             font-size: 21px;
             font-weight: bold;
-            color: #166534;
+            color: #14532d;
         }
 
         .logo span {
-            color: #22c55e;
+            color: #16a34a;
         }
 
-        .nav-links {
-            display: flex;
-            gap: 25px;
-            list-style: none;
-        }
-
-        .nav-links a {
-            text-decoration: none;
+        nav a {
             color: #374151;
-            font-weight: 600;
-            transition: 0.2s;
+            text-decoration: none;
+            font-weight: bold;
         }
 
-        .nav-links a:hover,
-        .nav-links .active {
+        nav a:hover {
             color: #16a34a;
         }
 
         /* HERO */
         .hero {
             text-align: center;
-            padding: 65px 20px 35px;
+            padding: 55px 20px 30px;
         }
 
-        .hero-icon {
+        .icon {
             width: 80px;
             height: 80px;
             margin: auto;
@@ -78,13 +70,13 @@
             align-items: center;
             justify-content: center;
             font-size: 38px;
-            box-shadow: 0 10px 25px rgba(22,163,74,0.25);
+            box-shadow: 0 10px 25px rgba(22, 163, 74, 0.25);
         }
 
         .hero h1 {
             margin-top: 20px;
+            font-size: 34px;
             color: #14532d;
-            font-size: 35px;
         }
 
         .hero p {
@@ -92,10 +84,10 @@
             color: #6b7280;
         }
 
-        /* CARD */
+        /* CONTAINER */
         .container {
             width: 92%;
-            max-width: 700px;
+            max-width: 680px;
             margin: 20px auto 70px;
         }
 
@@ -103,24 +95,23 @@
             background: white;
             padding: 35px;
             border-radius: 24px;
-            box-shadow: 0 15px 45px rgba(0,0,0,0.10);
+            box-shadow: 0 15px 45px rgba(0, 0, 0, 0.10);
         }
 
-        .card-title {
+        .card h2 {
             color: #166534;
-            font-size: 23px;
-            margin-bottom: 7px;
+            margin-bottom: 8px;
         }
 
-        .card-description {
+        .card .description {
             color: #6b7280;
-            margin-bottom: 25px;
             line-height: 1.6;
+            margin-bottom: 25px;
         }
 
         /* FORM */
         .form-group {
-            margin-bottom: 19px;
+            margin-bottom: 18px;
         }
 
         label {
@@ -137,8 +128,8 @@
             padding: 14px 15px;
             border: 1px solid #d1d5db;
             border-radius: 12px;
-            font-size: 15px;
             outline: none;
+            font-size: 15px;
             background: white;
             transition: 0.2s;
         }
@@ -147,7 +138,7 @@
         select:focus,
         textarea:focus {
             border-color: #16a34a;
-            box-shadow: 0 0 0 3px rgba(22,163,74,0.12);
+            box-shadow: 0 0 0 3px rgba(22, 163, 74, 0.12);
         }
 
         textarea {
@@ -156,10 +147,10 @@
         }
 
         /* BUTTON */
-        .btn {
+        button {
             width: 100%;
-            border: none;
             padding: 15px;
+            border: none;
             border-radius: 12px;
             background: linear-gradient(135deg, #16a34a, #15803d);
             color: white;
@@ -169,24 +160,23 @@
             transition: 0.2s;
         }
 
-        .btn:hover {
+        button:hover {
             transform: translateY(-2px);
-            box-shadow: 0 8px 20px rgba(22,163,74,0.25);
+            box-shadow: 0 8px 20px rgba(22, 163, 74, 0.25);
         }
 
-        .btn:disabled {
+        button:disabled {
             opacity: 0.7;
             cursor: not-allowed;
         }
 
         /* STATUS */
         #status {
-            display: none;
             margin-top: 18px;
             padding: 13px;
             border-radius: 10px;
             text-align: center;
-            font-weight: 600;
+            display: none;
         }
 
         .success {
@@ -215,30 +205,18 @@
 
         /* FOOTER */
         footer {
-            text-align: center;
-            padding: 25px;
             background: #14532d;
             color: white;
+            text-align: center;
+            padding: 25px;
             font-size: 14px;
         }
 
         /* MOBILE */
-        @media (max-width: 700px) {
+        @media (max-width: 600px) {
 
             nav {
                 padding: 0 5%;
-            }
-
-            .nav-links {
-                gap: 12px;
-            }
-
-            .nav-links a {
-                font-size: 13px;
-            }
-
-            .hero {
-                padding-top: 45px;
             }
 
             .hero h1 {
@@ -260,53 +238,42 @@
             DESA <span>SERINDANG</span>
         </div>
 
-        <ul class="nav-links">
-            <li>
-                <a href="index.html">Beranda</a>
-            </li>
-
-            <li>
-                <a href="profil-desa.html">Profil Desa</a>
-            </li>
-
-            <li>
-                <a href="layanan_masyarakat.html" class="active">
-                    Layanan Masyarakat
-                </a>
-            </li>
-        </ul>
+        <a href="index.html">
+            ← Beranda
+        </a>
     </nav>
 
 
-    <!-- HERO -->
+    <!-- JUDUL -->
     <section class="hero">
 
-        <div class="hero-icon">
+        <div class="icon">
             📖
         </div>
 
-        <h1>Buku Tamu Desa</h1>
+        <h1>
+            Buku Tamu Desa
+        </h1>
 
         <p>
-            Selamat datang di Desa Serindang.
-            Silakan isi buku tamu di bawah ini.
+            Silakan isi buku tamu sebagai data kunjungan masyarakat.
         </p>
 
     </section>
 
 
-    <!-- FORM -->
+    <!-- FORM BUKU TAMU -->
     <main class="container">
 
         <div class="card">
 
-            <h2 class="card-title">
+            <h2>
                 📋 Isi Buku Tamu
             </h2>
 
-            <p class="card-description">
-                Data yang Anda isi akan digunakan sebagai catatan
-                kunjungan masyarakat ke Desa Serindang.
+            <p class="description">
+                Terima kasih telah berkunjung ke Desa Serindang.
+                Silakan lengkapi data berikut.
             </p>
 
 
@@ -314,6 +281,7 @@
 
                 <!-- NAMA -->
                 <div class="form-group">
+
                     <label for="nama">
                         Nama Lengkap
                     </label>
@@ -321,14 +289,15 @@
                     <input
                         type="text"
                         id="nama"
-                        name="nama"
                         placeholder="Masukkan nama lengkap"
                         required>
+
                 </div>
 
 
                 <!-- ALAMAT -->
                 <div class="form-group">
+
                     <label for="alamat">
                         Alamat
                     </label>
@@ -336,14 +305,15 @@
                     <input
                         type="text"
                         id="alamat"
-                        name="alamat"
                         placeholder="Masukkan alamat"
                         required>
+
                 </div>
 
 
-                <!-- NOMOR HP -->
+                <!-- HP -->
                 <div class="form-group">
+
                     <label for="hp">
                         Nomor HP
                     </label>
@@ -351,22 +321,20 @@
                     <input
                         type="tel"
                         id="hp"
-                        name="hp"
                         placeholder="08xxxxxxxxxx"
                         required>
+
                 </div>
 
 
                 <!-- KEPERLUAN -->
                 <div class="form-group">
+
                     <label for="keperluan">
                         Keperluan Kunjungan
                     </label>
 
-                    <select
-                        id="keperluan"
-                        name="keperluan"
-                        required>
+                    <select id="keperluan" required>
 
                         <option value="">
                             -- Pilih Keperluan --
@@ -393,6 +361,7 @@
                         </option>
 
                     </select>
+
                 </div>
 
 
@@ -405,8 +374,7 @@
 
                     <textarea
                         id="pesan"
-                        name="pesan"
-                        placeholder="Tuliskan pesan atau kesan Anda..."
+                        placeholder="Tuliskan pesan atau kesan..."
                         required></textarea>
 
                 </div>
@@ -415,7 +383,6 @@
                 <!-- BUTTON -->
                 <button
                     type="submit"
-                    class="btn"
                     id="submitBtn">
 
                     📤 Kirim Buku Tamu
@@ -426,14 +393,17 @@
                 <!-- STATUS -->
                 <div id="status"></div>
 
-
             </form>
 
 
             <div class="info">
-                🔒 <strong>Informasi:</strong><br>
-                Data buku tamu digunakan untuk keperluan
-                pendataan dan pelayanan masyarakat Desa Serindang.
+
+                🔒 <strong>Privasi Data</strong><br>
+
+                Data yang Anda masukkan digunakan untuk
+                keperluan pendataan kunjungan masyarakat
+                Desa Serindang.
+
             </div>
 
         </div>
@@ -452,20 +422,21 @@
 <script>
 
     /*
-    ==========================================
-    GOOGLE APPS SCRIPT
-    ==========================================
+    =========================================
+    GOOGLE SHEETS
+    =========================================
 
-    Setelah Google Sheets dibuat,
-    masukkan URL Web App Google Apps Script
-    di bawah ini.
+    Masukkan URL Google Apps Script
+    setelah database Google Sheets selesai dibuat.
 
     Contoh:
-    const SCRIPT_URL = "https://script.google.com/...";
+
+    const SCRIPT_URL =
+    "https://script.google.com/macros/s/XXXX/exec";
     */
 
     const SCRIPT_URL =
-        "MASUKKAN_URL_GOOGLE_APPS_SCRIPT_DI_SINI";
+        "MASUKKAN_URL_APPS_SCRIPT_DI_SINI";
 
 
     const form =
@@ -478,19 +449,16 @@
         document.getElementById("status");
 
 
-    form.addEventListener("submit", async function(event) {
+    form.addEventListener("submit", async function(e) {
 
-        event.preventDefault();
+        e.preventDefault();
 
-
-        // Ubah tombol menjadi loading
         button.disabled = true;
 
         button.textContent =
-            "⏳ Mengirim data...";
+            "⏳ Mengirim...";
 
 
-        // Ambil data form
         const data = {
 
             nama:
@@ -530,15 +498,12 @@
             });
 
 
-            // Berhasil
             status.className =
                 "success";
 
             status.textContent =
                 "✓ Buku tamu berhasil dikirim. Terima kasih!";
 
-
-            // Kosongkan form
             form.reset();
 
 
@@ -548,12 +513,11 @@
                 "error";
 
             status.textContent =
-                "✕ Data gagal dikirim. Silakan coba lagi.";
+                "✕ Gagal mengirim data. Silakan coba lagi.";
 
         }
 
 
-        // Kembalikan tombol
         button.disabled = false;
 
         button.textContent =
